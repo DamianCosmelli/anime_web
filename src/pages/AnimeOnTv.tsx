@@ -1,13 +1,15 @@
 // Code to display the current anime on TV
 import { useAnimeTv, Anime } from '../hooks/useAimeTv';
 import { ShowCard } from '../components/AnimeCard';
+import { LoadingSpinner } from '../components/common/LoadingSpinner';
+import { ErrorMessage } from '../components/common/ErrorMessage';
 import { HeaderPage } from '../components/common/HeaderPage';
 
 export function AnimeOnTv() {
     const { animeList, loading, error } = useAnimeTv();
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <LoadingSpinner />;
+    if (error) return <ErrorMessage message= {error}/>;
 
     return (
         <>
