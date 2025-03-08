@@ -17,8 +17,8 @@ export function Layout({ children }: LayoutProps) {
               <li className="text-center">
                 <img src={logo} alt="Logo" className="inline-block mb-2 w-2/5" />
               </li>
-              <li><MenuItem title="Home" route="/" /></li>
-              <li><MenuItem title='Anime en Tv' route='/ontv'/></li>
+              <li><MenuItem title="Anime en Tv" route="/" /></li>
+              <li><MenuItem title='Buscar Anime' route='/search'/></li>
             </ul>
           </nav>
         </aside>
