@@ -1,0 +1,19 @@
+{
+    "name": "React Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "react-app",
+    "workspaceFolder": "/anime_web",
+    "customizations": {
+    "vscode": {
+        "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+        "extensions": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]},
+    "postCreateCommand": "npm install && chmod -R 777 /anime_web/node_modules",
+    "remoteUser": "root"
+  }
+ }
+ 

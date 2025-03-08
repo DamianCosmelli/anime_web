@@ -1,0 +1,18 @@
+services:
+ react-app:
+   image: node:18
+   working_dir: /anime_web
+   command: sleep infinity
+   stdin_open: true
+   tty: true
+   volumes:
+     - ../.:/anime_web
+     #- ../node_modules:/anime_web/node_modules  # Evita conflictos con dependencias locales
+     - node_modules:/anime_web/node_modules  # Usa un volumen Docker para node_modules
+   ports:
+     - "3000:3000"
+   sysctls:
+      net.ipv6.conf.all.disable_ipv6: 1
+
+volumes:
+  node_modules:  # Define un volumen Docker persistente para node_modules
