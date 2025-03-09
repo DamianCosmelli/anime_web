@@ -6,7 +6,7 @@ interface AnimeAttributes {
         en: string;
         ja_jp: string;
     };
-    episodeLength: string;
+    episodeCount: string;
     youtubeVideoId: string;
     posterImage: {
         small: string;
