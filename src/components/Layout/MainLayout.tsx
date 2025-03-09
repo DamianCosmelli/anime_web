@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import { MenuItem } from './MenuItem'; 
 import logo from '../../assets/anime-icon.png'; 
 
-
 interface LayoutProps {
   children: ReactNode;
 }
@@ -10,23 +9,24 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="flex">
-        <aside className="bg-gray-900 p-3 w-40 fixed h-full">
+      <header className="bg-gray-900 p-3 w-full fixed z-10">
+        <div className="flex items-center justify-between">
+          <h1 className="text-white text-2xl font-bold font-serif">Anime-Web</h1>
+          <img src={logo} alt="Logo" className="w-10 h-10" />
+        </div>
+        <div className="flex items-center justify-between bg-amber-600">
           <nav>
-            <ul className="space-y-4">
-              <li className="text-center">
-                <img src={logo} alt="Logo" className="inline-block mb-2 w-2/5" />
-              </li>
+            <ul className="flex space-x-4">
               <li><MenuItem title="Anime en Tv" route="/" /></li>
+              <li><MenuItem title='Anime Temporada' route='/temporada'/></li>
               <li><MenuItem title='Buscar Anime' route='/search'/></li>
+              <li><MenuItem title='Top Anime' route='/top'/></li>
             </ul>
           </nav>
-        </aside>
-        <div className="ml-40 flex-1">
-         <div className='flex flex-col'>
-           <main className="p-4">{children}</main>
-          </div>
         </div>
+      </header>
+      <div className="mt-1 flex-1 mb-12">
+        <main className="p-4">{children}</main>
       </div>
       <footer className="bg-gray-900 text-white p-1 text-center fixed bottom-0 w-full">
         <p>Anime-Web© 2025 by Bishops</p>

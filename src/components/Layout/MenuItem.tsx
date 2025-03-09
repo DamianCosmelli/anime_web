@@ -7,7 +7,7 @@ interface MenuItemProps {
 
 export function MenuItem({ title, route }: MenuItemProps) {
     return (
-        <li><Link to={route} className="text-white hover:text-gray-400 m-5">{title
-        }</Link></li>
+        <Link to={route} className="text-white hover:text-amber-900 m-5">{title
+        }</Link>
     );
 }
