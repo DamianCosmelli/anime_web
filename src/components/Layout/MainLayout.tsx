@@ -26,7 +26,7 @@ export function Layout({ children }: LayoutProps) {
         </div>
       </header>
       <div className="mt-1 flex-1 mb-12">
-        <main className="p-4">{children}</main>
+        <main className="p-4 bg-gray-400">{children}</main>
       </div>
       <footer className="bg-gray-900 text-white p-1 text-center fixed bottom-0 w-full">
         <p>Anime-Web© 2025 by Bishops</p>
