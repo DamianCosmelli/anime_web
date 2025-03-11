@@ -4,7 +4,7 @@ export const animeSeason = async (season: string, seasonYear: string = new Date(
         ENDPOINT_SEASON_ANIME.searchParams.append("filter[season]",season);
         ENDPOINT_SEASON_ANIME.searchParams.append("filter[seasonYear]",seasonYear);
     
-    const response = await fetch(ENDPOINT_SEASON_ANIME.toString());
+    const response = await fetch(ENDPOINT_SEASON_ANIME);
     
     if (!response.ok) {
         throw new Error('Error fetching anime data');
