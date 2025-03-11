@@ -8,7 +8,7 @@ interface CardProps {
   youtubeVideoId: string;
 }
 
-export function ShowCard({ title, episodie, imageUrl, youtubeVideoId }: CardProps) {
+export function AnimeCard({ title, episodie, imageUrl, youtubeVideoId }: CardProps) {
   return (
     <div className="w-50 rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-900 relative group">
       {youtubeVideoId ? (
