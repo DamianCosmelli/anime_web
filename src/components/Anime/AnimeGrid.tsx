@@ -1,6 +1,7 @@
-import { Anime } from '../hooks/useAimeTv';
+import { Anime } from '../../hooks/useAimeTv';
 import { AnimeCard } from './AnimeCard';
-import { TitlePage } from './TitlePage';
+import { TitlePage } from '../common/TitlePage';
+
 
 interface AnimeGridProps {
     animeList: Anime[];
@@ -12,9 +13,9 @@ export function AnimeGrid({ animeList, titlePage }: AnimeGridProps) {
         <>
             <div className="mt-16 p-4">
                 <TitlePage title={titlePage} />
-                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    {animeList && animeList.map((anime: Anime) => (
-                        <li key={anime.id}>
+                <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                   {animeList && animeList.map((anime: Anime) => (
+                        <li key={anime.id} className="flex justify-center">
                             <AnimeCard
                                 title={anime.attributes.titles.en || anime.attributes.titles.ja_jp}
                                 episodie={anime.attributes.episodeCount || 'No Informado'}

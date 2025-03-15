@@ -2,7 +2,7 @@
 import { useAnimeSeason } from '../hooks/useAnimeSeason';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { ErrorMessage } from '../components/common/ErrorMessage';
-import { AnimeGrid } from '../components/AnimeGrid'
+import { AnimeGrid } from '../components/Anime/AnimeGrid'
 
 //TODO: Cambiar la temporada y el año de la temporada por variables
 const season = 'fall';

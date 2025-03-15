@@ -2,7 +2,7 @@
 import { useAnimeTv } from '../hooks/useAimeTv';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { ErrorMessage } from '../components/common/ErrorMessage';
-import { AnimeGrid } from '../components/AnimeGrid'
+import { AnimeGrid } from '../components/Anime/AnimeGrid'
 
 export function AnimeOnTv() {
     const { animeList, loading, error } = useAnimeTv();
