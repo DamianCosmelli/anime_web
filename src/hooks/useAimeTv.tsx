@@ -8,8 +8,10 @@ interface AnimeAttributes {
     };
     episodeCount: string;
     youtubeVideoId: string;
+    synopsis: string;
     posterImage: {
         small: string;
+        
     };
 }
 

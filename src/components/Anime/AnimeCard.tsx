@@ -1,11 +1,12 @@
 // Code for the AnimeCard component
 import { AnimeTituloCard } from "./AnimeTituloCard";
 
-interface CardProps {
+export interface CardProps {
   title: string;
   episodie: string;
   imageUrl: string;
   youtubeVideoId: string;
+  synopsis: string;
 }
 
 export function AnimeCard({ title, episodie, imageUrl, youtubeVideoId }: CardProps) {
