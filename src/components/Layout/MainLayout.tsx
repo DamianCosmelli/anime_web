@@ -1,6 +1,13 @@
 import { ReactNode } from 'react';
 import { MenuItem } from './MenuItem'; 
 import logo from '../../assets/anime-icon.png'; 
+import { TrophyIcon, CalendarDaysIcon, MagnifyingGlassIcon , TvIcon} from '@heroicons/react/24/outline'
+
+// Icon from Heroicons
+const iconTv = <TvIcon className="w-6 h-6" />
+const iconTemporada = <CalendarDaysIcon className="w-6 h-6" />
+const iconSearch = <MagnifyingGlassIcon className="w-6 h-6" />
+const iconTop = <TrophyIcon className="w-6 h-6" />
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,10 +24,10 @@ export function Layout({ children }: LayoutProps) {
         <div className="flex items-center justify-between bg-amber-600">
           <nav>
             <ul className="flex space-x-4">
-              <li><MenuItem title="Anime en Tv" route="/" /></li>
-              <li><MenuItem title='Anime Temporada' route='/temporada'/></li>
-              <li><MenuItem title='Buscar Anime' route='/search'/></li>
-              <li><MenuItem title='Top Anime' route='/top'/></li>
+              <li><MenuItem icon={iconTv} title="Anime en Tv" route="/" /></li>
+              <li><MenuItem icon={iconTemporada} title='Anime Temporada' route='/temporada'/></li>
+              <li><MenuItem icon={iconSearch} title='Buscar Anime' route='/search'/></li>
+              <li><MenuItem icon={iconTop} title='Top Anime' route='/top'/></li>
             </ul>
           </nav>
         </div>
