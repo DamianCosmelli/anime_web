@@ -8,14 +8,14 @@ import { AnimeGrid } from '../components/Anime/AnimeGrid'
 const season = 'fall';
 const seasonYear = '2024';
 
-const Seasons = {
+export const Seasons = {
     winter: 'Invierno',
     spring: 'Primavera',
     summer: 'Verano',
     fall: 'Otoño'
 };
 
-function getSeasonName(season: keyof typeof Seasons) {
+export function getSeasonName(season: keyof typeof Seasons) {
     return Seasons[season] || '';
 }
 
