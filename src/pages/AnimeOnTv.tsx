@@ -12,7 +12,7 @@ export function AnimeOnTv() {
 
     return (
         <>
-            <AnimeGrid animeList={animeList ?? []} titlePage='Anime en Emisión'/>
+            <AnimeGrid animeList={animeList ?? []} titlePage='Anime en Emisión' margin={true}/>
         </>
      
     );

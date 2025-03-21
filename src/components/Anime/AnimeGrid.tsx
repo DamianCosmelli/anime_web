@@ -7,12 +7,13 @@ import { AnimeInfoModal } from './AnimeInfoModal';
 interface AnimeGridProps {
     animeList: Anime[];
     titlePage: string;
+    margin:boolean;
 }
 
-export function AnimeGrid({ animeList, titlePage }: AnimeGridProps) {
+export function AnimeGrid({ animeList, titlePage, margin }: AnimeGridProps) {
     return (
         <>
-            <div className="mt-16 p-4">
+            <div className={margin ? 'mt-16 p-4' : 'p-4'} >
                 <TitlePage title={titlePage} />
                 <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                    {animeList && animeList.map((anime: Anime) => (
