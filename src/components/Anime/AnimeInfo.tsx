@@ -13,7 +13,7 @@ export function AnimeInfo({ title, episodie, imageUrl, youtubeVideoId, synopsis 
                 {/* Column 1: Anime Image */}
                 <img src={imageUrl} alt={title} className="w-full h-full rounded-lg shadow-md" />
                 {/* Column 2: Synopsis */}
-                <textarea className='w-full h-full p-2 text-justify border rounded-lg overflow-auto scroll-smooth resize-none'>
+                <textarea className=' text-white w-full h-full p-2 text-justify border rounded-lg overflow-auto scroll-smooth resize-none'>
                   {synopsis}
                 </textarea>
                 {/* Column 3: YouTube Video */}
