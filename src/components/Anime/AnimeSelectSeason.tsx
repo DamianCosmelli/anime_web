@@ -52,7 +52,7 @@ export function AnimeSelectSeason({ seasons, years, onSubmit }: {
         <div className="flex flex-col items-center justify-center">
           <button 
             type="submit" 
-            className="bg-amber-600 rounded-full w-8 h-8 text-white hover:text-amber-900 text-lg py-3 flex items-center justify-center"
+            className="bg-emerald-700 rounded-full w-8 h-8 text-white hover:text-gray-800 text-lg py-3 flex items-center justify-center"
           >
             <CheckIcon className="w-5 h-5" />
           </button>

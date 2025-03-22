@@ -16,7 +16,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col  bg-gray-950">
-      <header className="flex items-center justify-between bg-amber-600">
+      <header className="flex items-center justify-between bg-emerald-700">
         <ul className="flex space-x-4">
           <li><img src={logo} alt="Logo" className="w-10 h-10 ml-2" /></li>
           <li><MenuItem icon={iconTv} title="Anime en Tv" route="/" /></li>

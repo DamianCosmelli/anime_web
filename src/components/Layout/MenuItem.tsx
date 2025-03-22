@@ -10,7 +10,7 @@ interface MenuItemProps {
 export function MenuItem({icon, title, route }: MenuItemProps) {
     return (
         <>        
-        <Link to={route} className="text-white hover:text-amber-900 flex justify-center text-center m-2 gap-1" >
+        <Link to={route} className="text-white hover:text-gray-800 flex justify-center text-center m-2 gap-1" >
         {icon}
         {title}
         </Link>
