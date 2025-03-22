@@ -19,9 +19,7 @@ export function AnimeInfoModal({ title, episodie, imageUrl, youtubeVideoId, syno
           
           {/* Modal para mostrar el video */}
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className="relative w-full h-64 sm:h-96">
-            <AnimeInfo title={title} episodie={episodie} imageUrl={imageUrl} youtubeVideoId={youtubeVideoId} synopsis={synopsis} />
-            </div>
+           <AnimeInfo title={title} episodie={episodie} imageUrl={imageUrl} youtubeVideoId={youtubeVideoId} synopsis={synopsis} />
           </Modal>
         </>
     </div>
