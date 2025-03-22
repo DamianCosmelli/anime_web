@@ -20,14 +20,14 @@ export function AnimeSelectSeason({ seasons, years, onSubmit }: {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="text-2xl font-bold gap-9">Selecciona la temporada y el año</h2>
+      <h2 className="text-2xl font-bold gap-9 text-white">Selecciona la temporada y el año</h2>
       <form className="flex items-center justify-center space-x-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center justify-center space-x-4">
           {/* 🔹 Temporada */}
-          <label htmlFor="season">Temporada:</label>
-          <select id="season" className="border p-2 rounded" {...register("season")}>
+          <label htmlFor="season" className="text-white">Temporada:</label>
+          <select id="season" className="border p-2 rounded text-white" {...register("season")}>
           {(Object.keys(seasons) as Array<keyof typeof Seasons>).map((key) => (
-                            <option key={key} value={key}  >
+                            <option key={key} value={key} className="bg-gray-950" >
                                 {Seasons[key]}
                             </option>
                         ))}
@@ -35,12 +35,12 @@ export function AnimeSelectSeason({ seasons, years, onSubmit }: {
           {errors.season && <p className="text-red-500 text-sm">{errors.season.message}</p>}
 
           {/* 🔹 Año */}
-          <label htmlFor="seasonYear">Año:</label>
-          <select id="seasonYear" className="border p-2 rounded" {...register("seasonYear")}>
+          <label htmlFor="seasonYear" className="text-white">Año:</label>
+          <select id="seasonYear" className="border p-2 rounded text-white" {...register("seasonYear")}>
           {Object.entries(years)
                             .sort((a, b) => Number(b[0]) - Number(a[0])) // Ordenar de mayor a menor
                             .map(([key, value]) => (
-                                <option key={key} value={key}>
+                                <option key={key} value={key} className="bg-gray-950">
                                     {value}
                                 </option>
                             ))}
