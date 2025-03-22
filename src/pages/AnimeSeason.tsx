@@ -52,7 +52,7 @@ export function AnimeSeason() {
 
     return (
         <>
-          <div className='mt-16 p-4'>
+          <div className='p-4'>
              <AnimeSelectSeason  seasons={Seasons} years={getSeasonYear()} onSubmit={handleFormSubmit}/> 
             <AnimeGrid animeList={animeSeasonList ?? []} titlePage={`Anime de la Temporada ${getSeasonName(seleccion.season)} del ${seleccion.seasonYear}`}  margin={false}/>
           </div>

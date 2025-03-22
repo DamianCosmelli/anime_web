@@ -10,10 +10,10 @@ interface AnimeGridProps {
     margin:boolean;
 }
 
-export function AnimeGrid({ animeList, titlePage, margin }: AnimeGridProps) {
+export function AnimeGrid({ animeList, titlePage}: AnimeGridProps) {
     return (
         <>
-            <div className={margin ? 'mt-16 p-4' : 'p-4'} >
+            <div className='p-4'>
                 <TitlePage title={titlePage} />
                 <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                    {animeList && animeList.map((anime: Anime) => (

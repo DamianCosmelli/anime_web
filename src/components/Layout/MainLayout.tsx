@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { MenuItem } from './MenuItem'; 
-import logo from '../../assets/anime-icon.png'; 
-import { TrophyIcon, CalendarDaysIcon, MagnifyingGlassIcon , TvIcon} from '@heroicons/react/24/outline'
+import { MenuItem } from './MenuItem';
+import logo from '../../assets/anime-icon.png';
+import { TrophyIcon, CalendarDaysIcon, MagnifyingGlassIcon, TvIcon } from '@heroicons/react/24/outline'
 
 // Icon from Heroicons
 const iconTv = <TvIcon className="w-6 h-6" />
@@ -17,16 +17,18 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col  bg-gray-950">
       <header className="flex items-center justify-between bg-amber-600">
-            <ul className="flex space-x-4">
-              <li><img src={logo} alt="Logo" className="w-10 h-10 ml-2" /></li>
-              <li><MenuItem icon={iconTv} title="Anime en Tv" route="/" /></li>
-              <li><MenuItem icon={iconTemporada} title='Anime Temporada' route='/temporada'/></li>
-              <li><MenuItem icon={iconSearch} title='Buscar Anime' route='/search'/></li>
-              <li><MenuItem icon={iconTop} title='Top Anime' route='/top'/></li>
-            </ul>
+        <ul className="flex space-x-4">
+          <li><img src={logo} alt="Logo" className="w-10 h-10 ml-2" /></li>
+          <li><MenuItem icon={iconTv} title="Anime en Tv" route="/" /></li>
+          <li><MenuItem icon={iconTemporada} title='Anime Temporada' route='/temporada' /></li>
+          <li><MenuItem icon={iconSearch} title='Buscar Anime' route='/search' /></li>
+          <li><MenuItem icon={iconTop} title='Top Anime' route='/top' /></li>
+        </ul>
       </header>
       <div className="mt-1 flex-1 mb-12">
-        <main className="p-4">{children}</main>
+        <main>
+          {children}
+        </main>
       </div>
       <footer className="bg-gray-900 text-white p-1 text-center w-full">
         <p>Anime-Web© 2025 by Bishops</p>
