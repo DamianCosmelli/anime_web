@@ -1,2 +1,16 @@
 /* src/index.css */
 @import "tailwindcss";
+
+@theme {
+    --font-japanes: "Rampart One", "sans-serif";/* Fuente de Google Fonts*/
+    --color-avocado-500: oklch(0.84 0.18 117.33);
+    --color-violeto: #845ec2;
+  
+    /*
+    --font-display: "Satoshi", "sans-serif";
+    --breakpoint-3xl: 120rem;
+    --color-avocado-100: oklch(0.99 0 0);
+    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+   
+     ... */
+  }
