@@ -1,5 +1,6 @@
 import { CardProps } from './AnimeCard';
 import { AnimeTituloInfo } from './AnimeTituloInfo';
+import {AnimeVideo} from './AnimeVideo'
 
 export function AnimeInfo({ title, episodie, imageUrl, youtubeVideoId, synopsis }: CardProps) {
 
@@ -18,14 +19,7 @@ export function AnimeInfo({ title, episodie, imageUrl, youtubeVideoId, synopsis 
                 </textarea>
                 {/* Column 3: YouTube Video */}
                 {/** TODO: mnajar 1- Carga del video | 2- Poner imnagen si video no esta disponible */}
-                <iframe
-                    src={`https://www.youtube.com/embed/${youtubeVideoId}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title="YouTube video player"
-                    className="h-full w-full rounded-lg shadow-md">
-                </iframe>
+                <AnimeVideo idVideo={youtubeVideoId} />
             </div>
         </div>
         </>
