@@ -1,9 +1,9 @@
-import { Seasons } from "../../models/Season";
+import { Seasons } from "../../../models/Season";
 import { CheckIcon} from '@heroicons/react/24/outline'
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { selectSeasonSchema } from '../../schema/SelectSeasonSchema'
+import { selectSeasonSchema } from '../../../schema/SelectSeasonSchema'
 
 // ✅ Tipo de los datos del formulario
 type FormData = z.infer<typeof selectSeasonSchema>;

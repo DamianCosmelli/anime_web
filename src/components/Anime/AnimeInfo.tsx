@@ -1,4 +1,4 @@
-import { AnimeTituloInfo } from './AnimeTituloInfo';
+import { AnimeTituloInfo } from './Titulos/AnimeTituloInfo';
 import {AnimeVideo} from './AnimeVideo'
 
 export interface AnimeInfoProps {

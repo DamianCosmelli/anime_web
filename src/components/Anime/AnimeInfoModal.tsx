@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {Modal} from "../common/Modal";
-import { AnimeTituloCard } from "./AnimeTituloCard";
+import { AnimeTituloCard } from "./Titulos/AnimeTituloCard";
 import { AnimeInfo, AnimeInfoProps } from './AnimeInfo';
 
 export function AnimeInfoModal({ title, episodie, imageUrl, youtubeVideoId, synopsis }: AnimeInfoProps) {

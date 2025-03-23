@@ -4,7 +4,7 @@ import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { ErrorMessage } from '../components/common/ErrorMessage';
 import { AnimeGrid } from '../components/Anime/AnimeGrid'
 import { Seasons } from '../models/Season'; 
-import { AnimeSelectSeason } from "../components/Anime/AnimeSelectSeason";
+import { AnimeSelectSeason } from "../components/Anime/Titulos/AnimeSelectSeason";
 import { useState } from 'react';
 //TODO: Cambiar la temporada y el año de la temporada por variables
 
