@@ -1,8 +1,15 @@
-import { CardProps } from './AnimeCard';
 import { AnimeTituloInfo } from './AnimeTituloInfo';
 import {AnimeVideo} from './AnimeVideo'
 
-export function AnimeInfo({ title, episodie, imageUrl, youtubeVideoId, synopsis }: CardProps) {
+export interface AnimeInfoProps {
+    title: string;
+    episodie: string;
+    imageUrl: string;
+    youtubeVideoId: string;
+    synopsis: string;
+  }
+
+export function AnimeInfo({ title, episodie, imageUrl, youtubeVideoId, synopsis }: AnimeInfoProps) {
 
     return (
         <>

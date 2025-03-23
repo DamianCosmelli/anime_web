@@ -1,10 +1,9 @@
 import { useState } from "react";
 import {Modal} from "../common/Modal";
 import { AnimeTituloCard } from "./AnimeTituloCard";
-import { CardProps } from './AnimeCard';
-import { AnimeInfo } from './AnimeInfo';
+import { AnimeInfo, AnimeInfoProps } from './AnimeInfo';
 
-export function AnimeInfoModal({ title, episodie, imageUrl, youtubeVideoId, synopsis }: CardProps) {
+export function AnimeInfoModal({ title, episodie, imageUrl, youtubeVideoId, synopsis }: AnimeInfoProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
