@@ -20,7 +20,7 @@ export function AnimeSelectSeason({ seasons, years, onSubmit }: {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="text-2xl font-bold gap-9 text-white">Selecciona la temporada y el año</h2>
+      <h2 className="text-2xl font-bold gap-9 text-white pb-2">Selecciona la temporada y el año</h2>
       <form className="flex items-center justify-center space-x-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center justify-center space-x-4">
           {/* 🔹 Temporada */}
