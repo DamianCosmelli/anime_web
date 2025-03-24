@@ -1,24 +1,6 @@
 import { useState, useEffect } from 'react';
 import { animeTv } from '../services/EmisionService';
-
-interface AnimeAttributes {
-    titles: {
-        en: string;
-        ja_jp: string;
-    };
-    episodeCount: string;
-    youtubeVideoId: string;
-    synopsis: string;
-    posterImage: {
-        small: string;
-        
-    };
-}
-
-export interface Anime {
-    id: string;
-    attributes: AnimeAttributes;
-}
+import { Anime } from '../models/Anime'
 
 export const useAnimeTv = () => {
     const [animeList, setAnimeList] = useState<Anime[] | null>(null);
