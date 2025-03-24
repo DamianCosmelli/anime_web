@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { animeSeason } from '../services/SeasonService';
-import { Anime } from './useAimeTv';
+import { Anime } from '../models/Anime';
 
 export const useAnimeSeason = (season:string, seasonYear:string) => {
     const [animeSeasonList, setAnimeSeasonList] = useState<Anime[] | null>(null);
