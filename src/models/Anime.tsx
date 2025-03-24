@@ -1,7 +1,7 @@
 interface AnimeAttributes {
     titles: {
         en: string;
-        ja_jp: string;
+        en_jp:string;
     };
     canonicalTitle: string;
     averageRating:string;
