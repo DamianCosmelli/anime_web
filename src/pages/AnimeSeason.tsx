@@ -1,15 +1,11 @@
 // Code to display the current anime on TV
 import { useAnimeSeason } from '../hooks/useAnimeSeason';
-import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { ErrorMessage } from '../components/common/ErrorMessage';
 import { AnimeGrid } from '../components/Anime/AnimeGrid'
 import { Seasons } from '../models/Season'; 
 import { AnimeSelectSeason } from "../components/Anime/Titulos/AnimeSelectSeason";
 import { useState } from 'react';
-//TODO: Cambiar la temporada y el año de la temporada por variables
-
-//const season = 'fall';
-//const seasonYear = '2024';
+import { LoadingPuff } from '../components/common/LoadingPuff';
 
 function getSeasonName(season: string) {
   return Seasons[season as keyof typeof Seasons] || '';
@@ -27,7 +23,7 @@ function getSeasonYear() {
 
   interface dataSelect {
     season:string,
-    seasonYear:string
+    seasonYear:string,
   }
 
   function actualYear(): string {
@@ -42,19 +38,18 @@ export function AnimeSeason() {
 
     const handleFormSubmit = (data: dataSelect) => {
         setSelection(data);
-        
     }
 
     const { animeSeasonList, loading, error } = useAnimeSeason(seleccion.season, seleccion.seasonYear);
        
-    if (loading) return <LoadingSpinner />;
+    if (loading) return <LoadingPuff />;
     if (error) return <ErrorMessage message= {error}/>;
 
     return (
         <>
           <div className='p-4'>
              <AnimeSelectSeason  seasons={Seasons} years={getSeasonYear()} onSubmit={handleFormSubmit}/> 
-            <AnimeGrid animeList={animeSeasonList ?? []} titlePage={`Anime de la Temporada ${getSeasonName(seleccion.season)} del ${seleccion.seasonYear}`}  margin={false}/>
+            <AnimeGrid animeList={animeSeasonList ?? []} titlePage={`Anime de la Temporada ${getSeasonName(seleccion.season)} del ${seleccion.seasonYear}`}/>
           </div>
         </>
     );
