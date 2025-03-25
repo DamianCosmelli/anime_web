@@ -14,20 +14,20 @@ import { Anime } from '../../models/Anime'
 
 export function AnimeStatus ({ anime }: { anime: Anime }) {
 
-    const status = anime.attributes.status;
+    const status = anime.status;
     let style;
     let message;
 
     switch (status) {
-        case 'current':
+        case 'Currently Airing':
           style = "bg-yellow-400 animate-pulse";
           message= "Emisión"
           break;
-        case 'upcoming':
+        case 'Not yet aired': //revisar caso
           style = "bg-sky-500";
           message= "Proximamente"
           break;
-        case 'finished':
+        case 'Finished Airing':
           style = "bg-red-400";
           message= "Finalizado"
           break;
