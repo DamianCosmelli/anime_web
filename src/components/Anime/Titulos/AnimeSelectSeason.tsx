@@ -1,5 +1,5 @@
 import { Seasons } from "../../../models/Season";
-import { CheckIcon} from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon} from '@heroicons/react/24/outline'
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -54,7 +54,7 @@ export function AnimeSelectSeason({ seasons, years, onSubmit }: {
             type="submit" 
             className="bg-emerald-700 rounded-full w-8 h-8 text-white hover:text-gray-800 text-lg py-3 flex items-center justify-center"
           >
-            <CheckIcon className="w-5 h-5" />
+            <MagnifyingGlassIcon className="w-5 h-5" />
           </button>
         </div>
       </form>
