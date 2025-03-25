@@ -15,11 +15,7 @@ export function AnimeInfoModal( { anime }: { anime: Anime }) {
             onClick={() => setIsModalOpen(true)}
           >
             <AnimeTituloCard anime={anime} />
-
-            {/* informacion que aparece en el centro al hacer hover 
-            <div className="absolute inset-0 flex items-center justify-center bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="text-white text-2xl font-bold">{episodie}</span>
-            </div>*/}
+            
           </div>
           
           {/* Modal para mostrar el video */}

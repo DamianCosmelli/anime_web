@@ -14,7 +14,7 @@ export function AnimeGrid({ animeList, titlePage}: AnimeGridProps) {
                 <TitlePage title={titlePage} />
                 <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                    {animeList && animeList.map((anime: Anime) => (
-                        <li key={anime.id} className="flex justify-center">
+                        <li key={anime.mal_id} className="flex justify-center">
                             <AnimeInfoModal anime={anime} />
                         </li>
                     ))}

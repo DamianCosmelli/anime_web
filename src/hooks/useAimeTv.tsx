@@ -10,8 +10,9 @@ export const useAnimeTv = () => {
     useEffect(() => {
         const getAnime = async () => {
             try {
-                const data = await animeTv();
-                setAnimeList(data);
+                const data: Anime[] = await animeTv();
+                const uniqueAnime = Array.from(new Map(data.map((anime: Anime) => [anime.mal_id, anime])).values()); // filtra duplicados
+                setAnimeList(uniqueAnime);
             } catch (err) {
                 setError((err as Error).message);
             } finally {

@@ -10,8 +10,9 @@ export const useAnimeSeason = (season:string, seasonYear:string) => {
     useEffect(() => {
         const getAnimeSeason = async () => {
             try {
-                const data = await animeSeason(season, seasonYear); ;
-                setAnimeSeasonList(data);
+                const data : Anime[] = await animeSeason(season, seasonYear) ;
+                const uniqueAnime = Array.from(new Map(data.map((anime: Anime) => [anime.mal_id, anime])).values()); // filtra duplicados
+                setAnimeSeasonList(uniqueAnime);
             } catch (err) {
                 setError((err as Error).message);
             } finally {

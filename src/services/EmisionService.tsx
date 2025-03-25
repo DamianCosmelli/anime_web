@@ -1,11 +1,10 @@
 // 1. Service: animeService.ts
 export const animeTv = async () => {
     
-    const ENDPOINT_EMISION_ANIME = new URL('https://kitsu.io/api/edge/anime');
-    ENDPOINT_EMISION_ANIME.searchParams.append("filter[status]",'current');
-    ENDPOINT_EMISION_ANIME.searchParams.append("filter[subtype]",'tv');
-    ENDPOINT_EMISION_ANIME.searchParams.append("page[limit]",'20');
-    ENDPOINT_EMISION_ANIME.searchParams.append("page[offset]",'2');
+    const ENDPOINT_EMISION_ANIME = new URL('https://api.jikan.moe/v4/anime');
+    ENDPOINT_EMISION_ANIME.searchParams.append("type",'tv');
+    ENDPOINT_EMISION_ANIME.searchParams.append("status",'airing');
+    ENDPOINT_EMISION_ANIME.searchParams.append("order_by",'popularity');
     
     const response = await fetch(ENDPOINT_EMISION_ANIME);
     if (!response.ok) {

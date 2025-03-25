@@ -1,32 +1,28 @@
-interface AnimeAttributes {
-    titles: {
-        en: string;
-        en_jp:string;
-    };
-    canonicalTitle: string;
-    averageRating:string;
-    startDate: string;
-    endDate: string;
-    ageRating:string;
-    ageRatingGuide: string;
-    subtyte:string;
-    status:string;
-    episodeCount: string;
-    youtubeVideoId: string;
-    synopsis: string;
-    posterImage: {
-        tiny: string;
-        small: string;
-        original: string;        
-    };
-    coverImage: {
-        tiny: string;
-        small: string;
-        original: string;
-    };
-}
-
 export interface Anime {
-    id: string;
-    attributes: AnimeAttributes;
+    mal_id: string;
+    url:string;
+    images: {
+        jpg: {
+            image_url:string;
+            small_image_url:string;
+            large_image_url:string;
+        };
+    };
+    trailer: {
+        youtube_id:string;
+    };
+    title: string;
+    title_english: string;
+    title_japanese: string;
+    episodes: number;
+    status:string;
+    aired: {
+        string:string;
+    }
+    rating:number;
+    score:number;
+    rank:number;
+    synopsis:string;
+    season:string;
+    year:number;
 }
