@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { MenuItem } from './MenuItem';
-import logo from '../../assets/anime-icon.png';
+//import logo from '../../assets/anime-icon.png';
+import logo from '../../assets/logo_2-sfdo.png';
 import { TrophyIcon, CalendarDaysIcon, MagnifyingGlassIcon, TvIcon } from '@heroicons/react/24/outline'
 
 // Icon from Heroicons
@@ -17,8 +18,8 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-screen flex-col  bg-gray-950">
       <header className="flex items-center justify-between bg-emerald-700">
-        <ul className="flex space-x-4">
-          <li><img src={logo} alt="Logo" className="w-10 h-10 ml-2" /></li>
+        <ul className="flex space-x-4 items-center">
+          <li><img src={logo} alt="Logo" className="w-16 h-16 ml-2" /></li>
           <li><MenuItem icon={iconTv} title="Anime en Tv" route="/" /></li>
           <li><MenuItem icon={iconTemporada} title='Anime Temporada' route='/temporada' /></li>
           <li><MenuItem icon={iconSearch} title='Buscar Anime' route='/search' /></li>
