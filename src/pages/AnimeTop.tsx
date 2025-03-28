@@ -1,10 +1,11 @@
+import AnimeTableTop from "../components/Anime/AnimeTableTop";
+import animes from '../mocks/jinka_top.json'
+const animestop = animes.data;
 
 export function AnimeTop() {
   return (
     <>
-      <div className='mt-16 p-4'>
-        <h1 className="text-3xl text-blue-600">Top de Anime</h1>
-      </div>
+      <AnimeTableTop animeList={animestop} />
     </>
 
   )

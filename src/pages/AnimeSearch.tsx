@@ -1,26 +1,23 @@
-import { ErrorMessage } from '../components/common/ErrorMessage';
-import { LoadingSpinner } from '../components/common/LoadingSpinner';
-import { useVideoCheck } from '../hooks/useVideoCheck'
-
-
-//const video = 'HBS3amqv1tA'; //No EXISTE
-//const video = 'byJ7pxxhaDY'; //ES VALIDO
-const video = 'D4INyfG-cz8'; //No EXISTE -- Video privado
+//import { ErrorMessage } from '../components/common/ErrorMessage';
+//import { LoadingSpinner } from '../components/common/LoadingSpinner';
+import { AnimeGrid } from "../components/Anime/AnimeGrid";
+//import { AnimeList } from "../components/Anime/AnimeList";
+import resultados from '../mocks/Jinka_all_animes.json'
+import {Anime} from '../models/Anime'
+import {Pagination} from '../models/Paginations';
 
 export function AnimeSearch() {
-  const { videoCheck, loading, error } = useVideoCheck(video);
+  /*const { videoCheck, loading, error } = useVideoCheck(video);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message={error} />;
+  if (error) return <ErrorMessage message={error} />;*/
+
+  const animes:Anime[] = resultados.data;
+  const pages:Pagination = resultados.pagination;
 
   return (
     <>
-
-      {videoCheck ? (
-        <h1 className="text-white">Video Encontrado</h1>
-      ) : (
-        <h1 className="text-red-500">Video NO encontrado</h1>
-      )}
+      <AnimeGrid animeList={animes ?? []} titlePage='Buscador de Animes'/>
     </>
   );
 }
