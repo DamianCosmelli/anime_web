@@ -1,5 +1,5 @@
 export interface Anime {
-    mal_id: string;
+    mal_id: number;
     url:string;
     images: {
         jpg: {
@@ -15,6 +15,12 @@ export interface Anime {
     title_english: string;
     title_japanese: string;
     episodes: number;
+    duration:string;
+    type:string; 
+    source:string;
+    demographics:{
+        name:string;
+    };
     status:string;
     aired: {
         string:string;
