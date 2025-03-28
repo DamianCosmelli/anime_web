@@ -1,7 +1,8 @@
 import { ErrorMessage } from '../common/ErrorMessage';
 import { LoadingSpinner } from '../common/LoadingSpinner';
 import { useVideoCheck } from '../../hooks/useVideoCheck';
-import ImagenNoEncontrado from '../../assets/Chibi_llorosa.jpg';
+//import ImagenNoEncontrado from '../../assets/Chibi_llorosa.jpg';
+import ImagenNoEncontrado from '../../assets/triste_2-sfdo.png';
 
 interface youtubeVideoId {
     idVideo: string;
@@ -35,17 +36,5 @@ export function AnimeVideo({ idVideo }: youtubeVideoId) {
                 </>
             )}
         </>
-
-
-
-
-        /* <iframe
-         src={`https://www.youtube.com/embed/${idVideo}`}
-         frameBorder="0"
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-         allowFullScreen
-         title="YouTube video player"
-         className="h-full w-full rounded-lg shadow-md">
-     </iframe> */
     );
 }
