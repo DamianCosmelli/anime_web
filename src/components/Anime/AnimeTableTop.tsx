@@ -1,6 +1,6 @@
-import { Typography } from "@material-tailwind/react";
 import { Anime } from '../../models/Anime';
 import { TitlePage } from "../common/TitlePage";
+import { AnimeInfoModal } from './AnimeInfoModal';
 
 const TABLE_HEAD = ["Rank", "Portada", "Titulo", "Puntuación", ""];
 
@@ -37,14 +37,7 @@ export default function AnimeTableTop({ animeList }: { animeList: Anime[] }) {
                 </td>
                 <td className="p-3">{anime.score}</td>
                 <td className="p-3">
-                  <Typography
-                    as="a"
-                    href="#"
-                    type="small"
-                    className="font-medium hover:text-emerald-600"
-                  >
-                    +Info
-                  </Typography>
+                  <AnimeInfoModal anime={anime}/>
                 </td>
               </tr>
             ))}
