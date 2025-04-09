@@ -6,10 +6,7 @@ import { Seasons } from '../models/Season';
 import { AnimeSelectSeason } from "../components/Anime/Titulos/AnimeSelectSeason";
 import { useState } from 'react';
 import { LoadingPuff } from '../components/common/LoadingPuff';
-
-function getSeasonName(season: string) {
-  return Seasons[season as keyof typeof Seasons] || '';
-}
+import { getSeasonName } from '../utils/seasonConverts';
 
 function getSeasonYear() {
     const date = new Date();

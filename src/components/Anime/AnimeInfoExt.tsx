@@ -1,6 +1,7 @@
 import { AnimeTituloInfo } from './Titulos/AnimeTituloInfo';
 import { Anime } from '../../models/Anime'
 import { } from '@heroicons/react/24/outline'
+import { getSeasonName } from '../../utils/seasonConverts';
 
 export function AnimeInfoExt({ anime }: { anime: Anime }) {
     return (
@@ -22,7 +23,7 @@ export function AnimeInfoExt({ anime }: { anime: Anime }) {
                         <div className="flex flex-col p-4 w-full max-h-[65vh] overflow-auto">
                             <p className="text-white p-2">{anime.type ? `Clasificación: ${anime.type}` : ""}</p>
                             <p className="text-white p-2">{anime.episodes ? `Episodios: ${anime.episodes}` : "Episodios: No informado"}</p>
-                            <p className="text-white p-2">{anime.season ? `Temporada: ${anime.season}` : ""}</p>
+                            <p className="text-white p-2">{anime.season ? `Temporada: ${getSeasonName(anime.season)}` : ""}</p>
                             <p className="text-white p-2">{anime.year ? `Año: ${anime.year}` : ""}</p>
                             <p className="text-white p-2">{anime.aired?.string ? `(${anime.aired.string})` : "No informado"}</p>
                             <p className="text-white p-2">{anime.score ? `Puntuación: ${anime.score}` : ""}</p>
