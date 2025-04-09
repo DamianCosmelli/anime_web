@@ -10,6 +10,7 @@ export interface Anime {
     };
     trailer: {
         youtube_id:string;
+        url:string;
     };
     title: string;
     title_english: string;
