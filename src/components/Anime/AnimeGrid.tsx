@@ -1,5 +1,5 @@
 import { TitlePage } from '../common/TitlePage';
-import { AnimeInfoModal } from './AnimeInfoModal';
+import { AnimeInfoModalAndCard } from './AnimeInfoModalAndCard';
 import { Anime } from '../../models/Anime'
 
 interface AnimeGridProps {
@@ -15,7 +15,7 @@ export function AnimeGrid({ animeList, titlePage}: AnimeGridProps) {
                 <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                    {animeList && animeList.map((anime: Anime) => (
                         <li key={anime.mal_id} className="flex justify-center">
-                            <AnimeInfoModal anime={anime} />
+                            <AnimeInfoModalAndCard anime={anime} />
                         </li>
                     ))}
                 </ul>
