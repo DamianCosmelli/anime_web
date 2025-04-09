@@ -1,6 +1,8 @@
+import { ENDPOINTS } from "../api/endpoints";
+
 export const animeSeason = async (season: string, seasonYear: string = new Date().getFullYear().toString()) => {
 
-    const ENDPOINT_SEASON_ANIME = new URL(`https://api.jikan.moe/v4/seasons/${seasonYear}/${season}`);
+    const ENDPOINT_SEASON_ANIME = new URL(`${ENDPOINTS.SEASONS}/${seasonYear}/${season}`);
         ENDPOINT_SEASON_ANIME.searchParams.append("filter","tv");
     
     const response = await fetch(ENDPOINT_SEASON_ANIME);

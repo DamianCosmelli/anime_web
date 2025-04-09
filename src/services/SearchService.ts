@@ -1,7 +1,9 @@
 // 1. Service: animeService.ts
+import { ENDPOINTS } from "../api/endpoints";
+
 export const animeSearch = async (name:string) => {
     
-    const ENDPOINT_EMISION_ANIME = new URL('https://kitsu.io/api/edge/anime');
+    const ENDPOINT_EMISION_ANIME = new URL(ENDPOINTS.ANIMES);
     ENDPOINT_EMISION_ANIME.searchParams.append("filter[text]",name);
     ENDPOINT_EMISION_ANIME.searchParams.append("sort",'startDate');
     
