@@ -6,7 +6,7 @@ import { HandRaisedIcon, FilmIcon } from '@heroicons/react/24/outline'
 export function AnimeTituloInfo({ anime }: { anime: Anime }) {
     return (
         <>
-            <div className="p-4 bg-emerald-700 rounded-lg shadow-lg gap-4">
+            <div className="p-4 bg-gradient-to-r from bg-emerald-600 via-emerald-700 to-emerald-950 rounded-lg shadow-lg gap-4">
                 <div className='flex items-center justify-between'>
                     <h1 className="text-base sm:text-lg md:text-xl line-clamp-1 text-gray-900 font-bold">
                         {anime.title}

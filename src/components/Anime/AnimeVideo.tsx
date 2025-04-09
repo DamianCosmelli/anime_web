@@ -24,13 +24,13 @@ export function AnimeVideo({ idVideo }: youtubeVideoId) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title="YouTube video player"
-                    className="h-full w-full rounded-lg shadow-md">
+                    className="w-full h-full rounded-lg shadow-md">
                 </iframe>
             ) : (
                 <>
                 <div>
                     <img src={ImagenNoEncontrado} alt="Video_no_encontrado"/>
-                    <h1 className='text-emerald-600 p-4 text-center text-4xl font-japanes'>ごめんなさい</h1>
+                    <h1 className='text-emerald-600 p-4 text-center text-4xl font-japanes'>ごめんね</h1>
                     <h2 className='text-emerald-800 p-2 text-center italic' >Disculpa, este video no esta disponible</h2>
                 </div>               
                 </>

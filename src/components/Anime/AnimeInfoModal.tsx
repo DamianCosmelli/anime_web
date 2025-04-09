@@ -1,7 +1,8 @@
 import { useState } from "react";
 import {Modal} from "../common/Modal";
 import { AnimeTituloCard } from "./Titulos/AnimeTituloCard";
-import { AnimeInfo} from './AnimeInfo';
+//import { AnimeInfo} from './AnimeInfo';
+import { AnimeInfoExt} from './AnimeInfoExt';
 import { Anime } from '../../models/Anime'
 
 export function AnimeInfoModal( { anime }: { anime: Anime }) {
@@ -20,7 +21,7 @@ export function AnimeInfoModal( { anime }: { anime: Anime }) {
           
           {/* Modal para mostrar el video */}
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-           <AnimeInfo anime={anime} />
+           <AnimeInfoExt anime={anime} />
           </Modal>
         </>
     </div>

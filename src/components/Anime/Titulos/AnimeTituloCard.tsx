@@ -11,7 +11,7 @@ export function AnimeTituloCard({ anime }: { anime: Anime }) {
                 {anime.title}
             </h5>
             <hr className="border-gray-300 dark:border-gray-700 my-2" />
-            <p className="text-white">Episodio:  {anime.episodes || 'No Informado'} </p>
+            <p className="text-white">Episodios:  {anime.episodes || 'No Informado'} </p>
         </div>
         </>
     );
