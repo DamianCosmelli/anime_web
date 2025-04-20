@@ -13,9 +13,13 @@ export function AnimeTop() {
       if (loading) return <LoadingPuff />; //<LoadingSpinner />;
       if (error) return <ErrorMessage message= {error}/>;
 
+      if (!animeListTop || animeListTop.length === 0) {
+        return <ErrorMessage message="No se encontraron resultados en la consulta." />;
+      }
+
   return (
     <>
-      <AnimeTableTop animeList={animeListTop?? []} />
+      <AnimeTableTop animeList={animeListTop} />
     </>
 
   )
