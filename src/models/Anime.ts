@@ -8,10 +8,14 @@ export interface Anime {
             large_image_url:string;
         };
     };
-    trailer: {
-        youtube_id:string;
-        url:string;
+   trailer: {
+    youtube_id: string | null;
+    url: string;
+    embed_url?: string;
+    images?: {
+      image_url?: string;
     };
+  };
     title: string;
     title_english: string;
     title_japanese: string;

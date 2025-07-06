@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { animeTop } from '../services/TopService';
+import { animeTop } from '../services/AnimeServices';
 import { Anime } from '../models/Anime'
+import { AnimeResponse } from '../models/AnimeResponse';
 
 export const useAnimeTop = () => {
     const [animeListTop, setAnimeListTop] = useState<Anime[] | null>(null);
@@ -10,8 +11,8 @@ export const useAnimeTop = () => {
     useEffect(() => {
         const getAnimeTop = async () => {
             try {
-                const data: Anime[] = await animeTop();
-                setAnimeListTop(data);
+                const data: AnimeResponse = await animeTop();
+                setAnimeListTop(data.data);
             } catch (err) {
                 setError((err as Error).message);
             } finally {

@@ -4,19 +4,26 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { selectSeasonSchema } from '../../../schema/SelectSeasonSchema'
+import { useEffect } from "react";
 
 // ✅ Tipo de los datos del formulario
 type FormData = z.infer<typeof selectSeasonSchema>;
 
 // ✅ Función reutilizable del formulario
-export function AnimeSelectSeason({ seasons, years, onSubmit }: { 
+export function AnimeSelectSeason({ seasons, years, onSubmit ,defaultSeason}: { 
   seasons: Record<string, string>; 
   years: Record<string, string>; 
   onSubmit: (data: FormData) => void;
+  defaultSeason?: string;
 }) {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(selectSeasonSchema),
   });
+
+  useEffect(() => {
+    setValue("season", defaultSeason || "winter"); // Establecer valor predeterminado para temporada
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Establecer valores predeterminados para temporada y año
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -24,14 +31,19 @@ export function AnimeSelectSeason({ seasons, years, onSubmit }: {
       <form className="flex items-center justify-center space-x-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center justify-center space-x-4">
           {/* 🔹 Temporada */}
-          <label htmlFor="season" className="text-white">Temporada:</label>
-          <select id="season" className="border p-2 rounded text-white" {...register("season")}>
-          {(Object.keys(seasons) as Array<keyof typeof Seasons>).map((key) => (
-                            <option key={key} value={key} className="bg-gray-950" >
-                                {Seasons[key]}
-                            </option>
-                        ))}
-          </select>
+            <label htmlFor="season" className="text-white">Temporada:</label>
+            <select
+            id="season"
+            className="border p-2 rounded text-white"
+            {...register("season")}
+            onChange={e => setValue("season", e.target.value)}
+            >
+            {(Object.keys(seasons) as Array<keyof typeof Seasons>).map((key) => (
+              <option key={key} value={key} className="bg-gray-950">
+              {Seasons[key]}
+              </option>
+            ))}
+            </select>
           {errors.season && <p className="text-red-500 text-sm">{errors.season.message}</p>}
 
           {/* 🔹 Año */}
