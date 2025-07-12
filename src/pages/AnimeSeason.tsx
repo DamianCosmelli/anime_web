@@ -41,7 +41,7 @@ function SeasonXDate(): string {
   return "";
 }
 
-export function AnimeSeason() {
+export const AnimeSeason = () => {
 /* Meses de las temporadas: 
 hacer que se seleccione una temporada y un año en relacion a la fecha actual
 enero (invierno), abril (primavera), julio (verano) y octubre (otoño)

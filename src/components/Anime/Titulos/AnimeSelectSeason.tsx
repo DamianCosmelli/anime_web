@@ -10,12 +10,12 @@ import { useEffect } from "react";
 type FormData = z.infer<typeof selectSeasonSchema>;
 
 // ✅ Función reutilizable del formulario
-export function AnimeSelectSeason({ seasons, years, onSubmit ,defaultSeason}: { 
+export const AnimeSelectSeason = ({ seasons, years, onSubmit ,defaultSeason}: { 
   seasons: Record<string, string>; 
   years: Record<string, string>; 
   onSubmit: (data: FormData) => void;
   defaultSeason?: string;
-}) {
+}) => {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(selectSeasonSchema),
   });

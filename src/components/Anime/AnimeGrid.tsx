@@ -6,7 +6,7 @@ interface AnimeGridProps {
     animeList: Anime[];
 }
 
-export function AnimeGrid({ animeList}: AnimeGridProps) {
+export const AnimeGrid = ({ animeList}: AnimeGridProps) => {
     console.log("AnimeGrid", animeList);// Debugging line to check props
     return (
         <>

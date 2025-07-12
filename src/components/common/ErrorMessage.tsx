@@ -12,7 +12,7 @@ function ReloadLink() {
   ); 
 }
 
-export function ErrorMessage({ error, message }: ErrorMessageProps) {
+export const ErrorMessage = ({ error, message }: ErrorMessageProps) => {
   console.error(error); // se registra el error en la consola
   return (
     <div className="p-1 max-w-sm mx-auto">

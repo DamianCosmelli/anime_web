@@ -3,7 +3,7 @@ import { AnimeStatus } from '../AnimeStatus'
 import { HandRaisedIcon, FilmIcon } from '@heroicons/react/24/outline'
 
 
-export function AnimeTituloInfo({ anime }: { anime: Anime }) {
+export const AnimeTituloInfo = ({ anime }: { anime: Anime }) => {
     return (
         <>
             <div className="p-4 bg-gradient-to-r from bg-emerald-600 via-emerald-700 to-emerald-950 rounded-lg shadow-lg gap-4">

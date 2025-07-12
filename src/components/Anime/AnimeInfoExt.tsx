@@ -3,7 +3,7 @@ import { Anime } from '../../models/Anime'
 import { } from '@heroicons/react/24/outline'
 import { getSeasonName } from '../../utils/seasonConverts';
 
-export function AnimeInfoExt({ anime }: { anime: Anime }) {
+export const AnimeInfoExt = ({ anime }: { anime: Anime }) => {
     return (
         <>
             <div className="p-6 h-auto w-full">

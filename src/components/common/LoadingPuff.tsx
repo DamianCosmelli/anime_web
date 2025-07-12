@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { PuffLoader } from "react-spinners";
 
-export function LoadingPuff() {
+export const LoadingPuff = () => {
 
     const [visible, setVisible] = useState(true);
 

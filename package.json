@@ -1,13 +1,16 @@
 {
   "name": "anime_web",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "homepage": "https://damiancosmelli.github.io/anime_web",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -15,6 +18,7 @@
     "@material-tailwind/react": "2.0.5",
     "@tailwindcss/vite": "^4.0.9",
     "clsx": "^2.1.1",
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",

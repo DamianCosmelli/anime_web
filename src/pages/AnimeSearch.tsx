@@ -10,7 +10,7 @@ import { animeSearch } from "../services/AnimeServices";
 import { AnimeResponse } from "../models/AnimeResponse";
 import { Anime } from "../models/Anime";
 
-export function AnimeSearch() {
+export const AnimeSearch = () => {
   const { animeList, animePagination, loading, error, currentPage, setCurrentPage, hasNextPage, setHasNextPage } = useAnimeAll();
   const [animeListUpdated, setAnimeListUpdated] = useState(animeList);
   const [searchTerm, setSearchTerm] = useState("");

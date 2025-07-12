@@ -3,7 +3,7 @@ import {Modal} from "../common/Modal";
 import { AnimeInfoExt} from './AnimeInfoExt';
 import { Anime } from '../../models/Anime'
 
-export function AnimeInfoModal( { anime }: { anime: Anime }) {
+export const AnimeInfoModal = ({ anime }: { anime: Anime }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

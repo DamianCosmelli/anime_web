@@ -7,7 +7,7 @@ interface MenuItemProps {
     route: string;
 }
 
-export function MenuItem({icon, title, route }: MenuItemProps) {
+export const MenuItem = ({icon, title, route }: MenuItemProps) => {
     return (
         <>        
         <Link to={route} className="text-white hover:text-gray-800 flex justify-center text-center m-2 gap-1" >

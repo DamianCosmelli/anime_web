@@ -12,7 +12,7 @@
 
 import { Anime } from '../../models/Anime'
 
-export function AnimeStatus ({ anime }: { anime: Anime }) {
+export const AnimeStatus = ({ anime }: { anime: Anime }) => {
 
     const status = anime.status;
     let style;
