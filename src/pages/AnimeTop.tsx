@@ -6,7 +6,7 @@ import { useAnimeTop } from '../hooks/useAimeTop';
 import { ErrorMessage } from '../components/common/ErrorMessage';
 import { LoadingPuff  } from '../components/common/LoadingPuff';
 
-export function AnimeTop() {
+export const AnimeTop = () => {
 
    const { animeListTop, loading, error } = useAnimeTop();
   

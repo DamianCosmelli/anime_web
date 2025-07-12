@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { PuffLoader } from "react-spinners";
 
-export function LoadingPuff() {
+export const LoadingPuff = () => {
 
     const [visible, setVisible] = useState(true);
 
@@ -9,7 +9,7 @@ export function LoadingPuff() {
         // Esperar 2 segundos antes de cambiar el estado de visibilidad
         const timer = setTimeout(() => {
             setVisible(false); // Ocultar el componente después de 2 segundos
-        }, 1500);
+        }, 500);
 
         // Limpiar el timeout si el componente se desmonta antes de los 2 segundos
         return () => clearTimeout(timer);

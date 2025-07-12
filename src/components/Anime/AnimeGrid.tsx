@@ -1,17 +1,16 @@
-import { TitlePage } from '../common/TitlePage';
 import { AnimeInfoModalAndCard } from './AnimeInfoModalAndCard';
 import { Anime } from '../../models/Anime'
 
+
 interface AnimeGridProps {
     animeList: Anime[];
-    titlePage: string;
 }
 
-export function AnimeGrid({ animeList, titlePage}: AnimeGridProps) {
+export const AnimeGrid = ({ animeList}: AnimeGridProps) => {
+    console.log("AnimeGrid", animeList);// Debugging line to check props
     return (
         <>
             <div className='p-4'>
-                <TitlePage title={titlePage} />
                 <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                    {animeList && animeList.map((anime: Anime) => (
                         <li key={anime.mal_id} className="flex justify-center">

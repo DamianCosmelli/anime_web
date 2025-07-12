@@ -8,7 +8,7 @@ interface youtubeVideoId {
     idVideo: string;
 }
 
-export function AnimeVideo({ idVideo }: youtubeVideoId) {
+export const AnimeVideo = ({ idVideo }: youtubeVideoId) => {
 
     const { videoCheck, loading, error } = useVideoCheck(idVideo);
 

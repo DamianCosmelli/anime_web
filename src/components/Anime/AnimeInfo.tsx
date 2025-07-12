@@ -2,7 +2,7 @@ import { AnimeTituloInfo } from './Titulos/AnimeTituloInfo';
 import { AnimeVideo } from './AnimeVideo'
 import { Anime } from '../../models/Anime'
 
-export function AnimeInfo({ anime }: { anime: Anime }) {
+export const AnimeInfo = ({ anime }: { anime: Anime }) => {
     console.log("entro en animeInfo");
     console.log(anime);
     return (
@@ -21,7 +21,7 @@ export function AnimeInfo({ anime }: { anime: Anime }) {
                         {anime.synopsis}
                     </textarea>
                     {/* Column 3: YouTube Video */}
-                    <AnimeVideo idVideo={anime.trailer.youtube_id} />
+                    <AnimeVideo idVideo={anime.trailer.youtube_id ?? ""} />
                 </div>
             </div>
         </>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function LoadingSpinner() {
+export const LoadingSpinner = () => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {

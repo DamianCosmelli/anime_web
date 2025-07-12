@@ -5,7 +5,7 @@ interface DropdownProps {
   onSelect: (option: string) => void;
 }
 
-export function Dropdown({ options, onSelect }: DropdownProps) {
+export const Dropdown = ({ options, onSelect }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
