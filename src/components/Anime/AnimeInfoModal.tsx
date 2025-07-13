@@ -1,27 +1,24 @@
 import { useState } from "react";
 import {Modal} from "../common/Modal";
-import { AnimeTituloCard } from "./AnimeTituloCard";
-import { CardProps } from './AnimeCard';
-import { AnimeInfo } from './AnimeInfo';
+import { AnimeInfoExt} from './AnimeInfoExt';
+import { Anime } from '../../models/Anime'
 
-export function AnimeInfoModal({ title, episodie, imageUrl, youtubeVideoId, synopsis }: CardProps) {
+export const AnimeInfoModal = ({ anime }: { anime: Anime }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="w-50 rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-gray-900 relative group">
+    <div className="overflow-hidden bg-white dark:bg-gray-950 relative group">
         <>
           <div
-            className="hover:opacity-75 block cursor-pointer"
+            className=" font-medium hover:text-emerald-600 hover:opacity-60 block cursor-pointer"
             onClick={() => setIsModalOpen(true)}
           >
-            <AnimeTituloCard title={title} episodie={episodie} imageUrl={imageUrl} />
+            +Info
           </div>
           
           {/* Modal para mostrar el video */}
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className="relative w-full h-64 sm:h-96">
-            <AnimeInfo title={title} episodie={episodie} imageUrl={imageUrl} youtubeVideoId={youtubeVideoId} synopsis={synopsis} />
-            </div>
+           <AnimeInfoExt anime={anime} />
           </Modal>
         </>
     </div>

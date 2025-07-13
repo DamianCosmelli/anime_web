@@ -1,12 +1,24 @@
+import { useLocation } from 'react-router-dom';
+import ImagenNoEncontrado from '../../assets/triste_2-sfdo.png';
 interface ErrorMessageProps {
-  message: string;
+  error?: string;
+  message?: string;
 }
 
-export function ErrorMessage({ message }: ErrorMessageProps) {
+function ReloadLink() {
+  const location = useLocation();
   return (
-    <div className="bg-red-500 text-white p-4 rounded-lg shadow-md max-w-sm mx-auto mt-20">
-      <p className="font-bold">Error:</p>
-      <p>{message}</p>
+    <a className='text-blue-600 underline' href={location.pathname}>Recargar</a>
+  ); 
+}
+
+export const ErrorMessage = ({ error, message }: ErrorMessageProps) => {
+  console.error(error); // se registra el error en la consola
+  return (
+    <div className="p-1 max-w-sm mx-auto">
+      <img src={ImagenNoEncontrado} alt="Error_producido"/>
+      <h2 className='text-emerald-800 text-center italic' >{message ? message : 'Disculpa, se produjo un error en la carga de la pagina.'} 
+        Vuelve a {ReloadLink()} la {message ? "pagina": "misma"}.</h2>
     </div>
   );
 }

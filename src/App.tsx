@@ -1,6 +1,6 @@
 // src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import {Layout} from './components/Layout/MainLayout';
 import {AnimeSearch} from './pages/AnimeSearch';
 import {AnimeOnTv} from './pages/AnimeOnTv';
@@ -10,10 +10,11 @@ import {AnimeTop} from './pages/AnimeTop';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/anime_web">
       <Layout>
         <Routes>
-          <Route path="/" element={<AnimeOnTv />} />
+          <Route path="/" element={<Navigate to="/ontv" replace />} />
+          <Route path="/ontv" element={<AnimeOnTv />} />
           <Route path="/temporada" element={<AnimeSeason />} />
           <Route path="/search" element={<AnimeSearch />} />
           <Route path="/top" element={<AnimeTop />} />

@@ -1,40 +1,30 @@
-import { CardProps } from './AnimeCard';
-import { AnimeTituloInfo } from './AnimeTituloInfo';
+import { AnimeTituloInfo } from './Titulos/AnimeTituloInfo';
+import { AnimeVideo } from './AnimeVideo'
+import { Anime } from '../../models/Anime'
 
-export function AnimeInfo({ title, episodie, imageUrl, youtubeVideoId, synopsis }: CardProps) {
-
+export const AnimeInfo = ({ anime }: { anime: Anime }) => {
+    console.log("entro en animeInfo");
+    console.log(anime);
     return (
-        <div className="container mx-auto p-4">
-            <AnimeTituloInfo title={title} episodie={episodie} />
-                        
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Column 1: Anime Image */}
-                <div className="space-y-2">
-                    <img src={imageUrl} alt={title} className="w-9/10 rounded-lg shadow-md p-1" />
+        <>
+
+            <div className="p-6 h-auto max-w-screen-lg mx-auto">
+                <div className="mb-4">
+                    <AnimeTituloInfo anime={anime} />
                 </div>
 
-                {/* Column 2: Synopsis */}
-                <div className="text-justify text-gray-800">
-                    <h2 className="text-xl font-bold">Synopsis</h2>
-                    <textarea className='w-full h-9/10 p-2 text-justify'>{synopsis}</textarea>
-                </div>
-
-                {/* Column 3: YouTube Video */}
-                <div className="space-y-2 flex flex-col">
-                <h2 className="text-xl font-bold">Trailer</h2>
-                {/** TODO: mnajar 1- Carga del video | 2- Poner imnagen si video no esta disponible */}
-                    <iframe
-                        width="100%"
-                        height="315"
-                        src={`https://www.youtube.com/embed/${youtubeVideoId}`}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title="YouTube video player"
-                        className="w-full rounded-lg shadow-md"
-                    ></iframe>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+                    {/* Column 1: Anime Image */}
+                    <img src={anime.images.jpg.large_image_url} alt={anime.title} className="w-full max-h-[65vh] h-auto rounded-lg shadow-md" />
+                    {/* Column 2: Synopsis */}
+                    <textarea className="text-white w-full max-h-[65vh] p-4 text-justify border rounded-lg overflow-auto scroll-smooth resize-none" disabled>
+                        {anime.synopsis}
+                    </textarea>
+                    {/* Column 3: YouTube Video */}
+                    <AnimeVideo idVideo={anime.trailer.youtube_id ?? ""} />
                 </div>
             </div>
-        </div>
+        </>
+
     );
 }

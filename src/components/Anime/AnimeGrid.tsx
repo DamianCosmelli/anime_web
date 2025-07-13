@@ -1,29 +1,20 @@
-import { Anime } from '../../hooks/useAimeTv';
-//import { AnimeCard } from './AnimeCard';
-import { TitlePage } from '../common/TitlePage';
-import { AnimeInfoModal } from './AnimeInfoModal';
+import { AnimeInfoModalAndCard } from './AnimeInfoModalAndCard';
+import { Anime } from '../../models/Anime'
 
 
 interface AnimeGridProps {
     animeList: Anime[];
-    titlePage: string;
 }
 
-export function AnimeGrid({ animeList, titlePage }: AnimeGridProps) {
+export const AnimeGrid = ({ animeList}: AnimeGridProps) => {
+    console.log("AnimeGrid", animeList);// Debugging line to check props
     return (
         <>
-            <div className="mt-16 p-4">
-                <TitlePage title={titlePage} />
+            <div className='p-4'>
                 <ul className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                    {animeList && animeList.map((anime: Anime) => (
-                        <li key={anime.id} className="flex justify-center">
-                            <AnimeInfoModal
-                                title={anime.attributes.titles.en || anime.attributes.titles.ja_jp}
-                                episodie={anime.attributes.episodeCount || 'No Informado'}
-                                youtubeVideoId={anime.attributes.youtubeVideoId}
-                                imageUrl={anime.attributes.posterImage.small}
-                                synopsis={anime.attributes.synopsis}
-                            />
+                        <li key={anime.mal_id} className="flex justify-center">
+                            <AnimeInfoModalAndCard anime={anime} />
                         </li>
                     ))}
                 </ul>
