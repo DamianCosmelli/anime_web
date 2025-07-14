@@ -1,52 +1,64 @@
-import { AnimeTituloInfo } from './Titulos/AnimeTituloInfo';
+//import { AnimeTituloInfo } from './Titulos/AnimeTituloInfo';
 import { Anime } from '../../models/Anime'
 import { } from '@heroicons/react/24/outline'
 import { getSeasonName } from '../../utils/seasonConverts';
 
 export const AnimeInfoExt = ({ anime }: { anime: Anime }) => {
     return (
-        <>
-            <div className="p-6 h-auto w-full">
-                {/* Título fuera del grid, ocupa 100% */}
-                <div className="mb-4 w-full">
-                    <AnimeTituloInfo anime={anime} />
-                </div>
+<div className="text-white flex items-center justify-center p-6 min-h-screen">
+  <div className="bg-neutral-900 rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl max-h-screen">
 
-                {/* Contenedor centrado y más reducido */}
-                <div className="max-w-[90%] mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
-                        {/* Imagen del Anime */}
-                        <img src={anime.images.jpg.large_image_url} alt={anime.title}
-                            className="w-full max-h-[65vh] h-auto rounded-lg shadow-md" />
+    {/* Imagen */}
+    <div className="relative h-full ">
+      <img
+        src={anime.images.jpg.large_image_url}
+        alt={anime.title}
+        className="pl-10 pt-4"
+      />
+    </div>
 
-                        {/* Detalles del Anime */}
-                        <div className="flex flex-col p-4 w-full max-h-[65vh] overflow-auto">
-                            <p className="text-white p-2">{anime.type ? `Clasificación: ${anime.type}` : ""}</p>
-                            <p className="text-white p-2">{anime.episodes ? `Episodios: ${anime.episodes}` : "Episodios: No informado"}</p>
-                            <p className="text-white p-2">{anime.year ? `Año: ${anime.year}` : ""}</p>
-                            <p className="text-white p-2">{anime.season ? `Temporada: ${getSeasonName(anime.season)}` : ""}</p>                        
-                            <p className="text-white p-2">{anime.aired?.string ? `(${anime.aired.string})` : "No informado"}</p>
-                            <p className="text-white p-2">{anime.score ? `Puntuación: ${anime.score}` : ""}</p>
-                            <p className="text-white p-2">{anime.rank ? `Ranking: ${anime.rank}` : ""}</p>
+    {/* Contenido */}
+    <div className="p-6 flex flex-col h-full max-h-screen overflow-y-auto">
+      <div className="flex flex-col space-y-4 flex-grow">
 
-                            {/* Muestra boton de trailer solo si esta presente la URL de youtube */}
-                            {anime.trailer.url ? (
-                            <div className="mt-auto w-full">
-                                <a href={anime.trailer.url} target="_blank" rel="noopener noreferrer"
-                                    className="block w-full text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-lg px-4 py-2 text-center transition duration-300 ease-in-out">
-                                    Trailer
-                                </a>
-                            </div>): ("")}
-                        </div> 
+        {/* Título */}
+        <h2 className="text-2xl font-bold text-emerald-600">
+          {anime.title_english || anime.title_japanese || anime.title}
+        </h2>
 
-                        {/* Sinopsis */}
-                        <textarea className="text-white w-full max-h-[65vh] p-4 text-justify border rounded-lg overflow-auto resize-none" disabled>
-                            {anime.synopsis}
-                        </textarea>
-                    </div>
-                </div>
-            </div>
-        </>
+        {/* Caja de datos */}
+        <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-4 text-sm text-gray-300 space-y-2">
+          <p><strong className="text-white">Clasificación:</strong> {anime.type || "No informado"}</p>
+          <p><strong className="text-white">Episodios:</strong> {anime.episodes || "No informado"}</p>
+          <p><strong className="text-white">Año:</strong> {anime.year || "No informado"}</p>
+          <p><strong className="text-white">Temporada:</strong> {getSeasonName(anime.season)} ({anime.aired.string || "No informado"})</p>
+          <p><strong className="text-white">Puntuación:</strong> {anime.score || "No informado"}</p>
+        </div>
 
+        {/* Sinopsis con scroll */}
+        <div className="text-sm text-gray-400">
+          <p className="text-white font-semibold mb-1">Sinopsis:</p>
+          <div className="max-h-40 overflow-y-auto pr-2 custom-scroll">
+            <p>{anime.synopsis || "No disponible"}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Botón */}
+      {anime.trailer?.url && (
+        <div className="pt-6">
+          <a
+            href={anime.trailer.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center bg-emerald-600 hover:bg-emerald-700 transition-colors px-6 py-2 rounded-full font-semibold"
+          >
+            Ver Trailer
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
     );
 }
