@@ -12,7 +12,7 @@ export const useAnimeTop = () => {
         const getAnimeTop = async () => {
             try {
                 const data: AnimeResponse = await animeTop();
-                const uniqueAnime = Array.from(new Map(data.data.map((anime: Anime) => [anime.rank, anime])).values()).sort((a, b) => a.rank - b.rank);
+                const uniqueAnime = Array.from(new Map(data.data.map((anime: Anime) => [anime.rank, anime])).values()).sort((a, b) => a.rank - b.rank).splice(0,15);
                 setAnimeListTop(uniqueAnime);
             } catch (err) {
                 setError((err as Error).message);
